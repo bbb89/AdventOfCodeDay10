@@ -32,7 +32,11 @@ public class Solution {
                 xor = xor ^ list.get(i * 16 + j);
                 System.out.print("");
             }
-            stringBuilder.append(Integer.toHexString(xor));
+            String currentHex = Integer.toHexString(xor);
+            if(currentHex.length() == 1) {
+                currentHex = "0" + currentHex;
+            }
+            stringBuilder.append(currentHex);
         }
 
         knotHash = stringBuilder.toString();
